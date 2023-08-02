@@ -1,0 +1,5 @@
+IP: 158.160.73.224;
+name_taski: https://managetasks.ddns.net/;
+name_kittygram: https://prettykitty.serveblog.net/;
+login: y;
+password: qwerty;
