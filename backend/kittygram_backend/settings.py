@@ -1,14 +1,17 @@
-from dotenv import load_dotenv
 import os
 from pathlib import Path
+
+
+from dotenv import load_dotenv
+
 
 load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_TOKEN', 'default_key') 
-DEBUG = False
+DEBUG = False if os.getenv('DEBUG').lower() == 'false' else True
 
-ALLOWED_HOSTS = ['prettykitty.serveblog.net', '158.160.73.224', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(', ')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
